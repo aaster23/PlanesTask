@@ -77,7 +77,7 @@ namespace ConsoleApplication6
             int airplanesTotal = Airplanes.Count;
             for (int i = 0; i < airplanesTotal; i++)
             {
-                Airplanes.OrderByDescending(x => x.CurrentFuel);
+                Airplanes = Airplanes.OrderBy(x => x.CurrentFuel).ToList();
                 for (int u = 0; u < airplanesTotal; u++)
                 {
                     if (Airplanes[0].CurrentFuel < Airplanes[0].FuelCapacity / 10)
@@ -115,7 +115,6 @@ namespace ConsoleApplication6
             planetype = "Cessna560XL";
             planes = PlaneType(planetype);
             PlanesInitializer(planes, planetype);
-
 
             LandingTower();
 
@@ -165,7 +164,8 @@ namespace ConsoleApplication6
     class Boeing737 : Airplane
     {
 
-        public Boeing737(string airplanename = "Boeing737" , int planeid = 0, int airplaneweight = 12400, int airplaneconsumption = 75, int timelanding = 3, int fuelcapacity = 1600, int passangers = 270, double currentfuel = 0) : base(airplanename, planeid, airplaneweight, airplaneconsumption, timelanding, fuelcapacity, passangers, currentfuel)
+        public Boeing737(string airplanename = "Boeing737" , int planeid = 0, int airplaneweight = 12400, int airplaneconsumption = 75, int timelanding = 3, int fuelcapacity = 1600, int passangers = 270, double currentfuel = 0) 
+            : base(airplanename, planeid, airplaneweight, airplaneconsumption, timelanding, fuelcapacity, passangers, currentfuel)
         {
         }
     }
@@ -173,14 +173,16 @@ namespace ConsoleApplication6
     class Boeing747 : Airplane
     {
 
-        public Boeing747(string airplanename = "Boeing747", int planeid = 0, int airplaneweight = 16100, int airplaneconsumption = 175, int timelanding = 5, int fuelcapacity = 2200, int passangers = 350, double currentfuel = 0) : base(airplanename, planeid, airplaneweight, airplaneconsumption, timelanding, fuelcapacity, passangers, currentfuel)
+        public Boeing747(string airplanename = "Boeing747", int planeid = 0, int airplaneweight = 16100, int airplaneconsumption = 175, int timelanding = 5, int fuelcapacity = 2200, int passangers = 350, double currentfuel = 0) 
+            : base(airplanename, planeid, airplaneweight, airplaneconsumption, timelanding, fuelcapacity, passangers, currentfuel)
         {
         }
     }
     class CanadairCRJ700 : Airplane
     {
 
-        public CanadairCRJ700(string airplanename = "Canadair CRJ700", int planeid = 0, int airplaneweight = 9000, int airplaneconsumption = 55, int timelanding = 4, int fuelcapacity = 950, int passangers = 70, double currentfuel = 0) : base(airplanename, planeid, airplaneweight, airplaneconsumption, timelanding, fuelcapacity, passangers, currentfuel)
+        public CanadairCRJ700(string airplanename = "Canadair CRJ700", int planeid = 0, int airplaneweight = 9000, int airplaneconsumption = 55, int timelanding = 4, int fuelcapacity = 950, int passangers = 70, double currentfuel = 0) 
+            : base(airplanename, planeid, airplaneweight, airplaneconsumption, timelanding, fuelcapacity, passangers, currentfuel)
         {
         }
     }
@@ -188,7 +190,8 @@ namespace ConsoleApplication6
     class Cessna560XL : Airplane
     {
 
-        public Cessna560XL(string airplanename = "Cessna 560XL", int planeid = 0, int airplaneweight = 4500, int airplaneconsumption = 30, int timelanding = 2, int fuelcapacity = 700, int passangers = 8, double currentfuel = 0) : base(airplanename, planeid, airplaneweight, airplaneconsumption, timelanding, fuelcapacity, passangers, currentfuel)
+        public Cessna560XL(string airplanename = "Cessna 560XL", int planeid = 0, int airplaneweight = 4500, int airplaneconsumption = 30, int timelanding = 2, int fuelcapacity = 700, int passangers = 8, double currentfuel = 0) 
+            : base(airplanename, planeid, airplaneweight, airplaneconsumption, timelanding, fuelcapacity, passangers, currentfuel)
         {
         }
     }
